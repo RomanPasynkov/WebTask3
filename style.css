@@ -1,0 +1,170 @@
+/* === СБРОС === */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    overflow-x: hidden;
+}
+
+/* === HEADER (как в задании 2) === */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* логотип, заголовок и меню на одной линии */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* логотип и заголовок идут слева */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+}
+
+.site-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* меню справа, как раньше */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    max-width: 850px;        /* ограничение по ширине */
+    width: 90%;              /* чтобы были поля по бокам */
+    margin: 0 auto;          /* центрирование */
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* порядок блоков (таблица — первая на телефонах) */
+.block-table { order: -1; }
+.block-links { order: 0; }
+.block-form  { order: 1; }
+
+/* === ТАБЛИЦА === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 6px;
+    text-align: center;
+}
+
+thead {
+    background: #d0d0ff;
+}
+
+tbody tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+/* === ФОРМА === */
+form input, form select, form textarea, form button {
+    margin-top: 5px;
+}
+
+/* === FOOTER === */
+footer {
+    background: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* === MEDIA QUERY для телефонов === */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;          /* чтобы на телефоне занимало почти всю ширину */
+        padding: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-title {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 8px 0;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    /* порядок блоков на телефоне */
+    .block-table { order: -1; }
+    .block-links { order: 0; }
+    .block-form  { order: 1; }
+}
